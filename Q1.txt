@@ -1,0 +1,29 @@
+Q1- Write a query that calculates the difference between the highest salaries found in the marketing and engineering departments. 
+Output just the absolute difference in salaries.
+
+Answer ==> 
+select abs(max(e1.salary) - max(e2.salary)) as salary_difference 
+from db_employee e1, db_employee e2
+where e1.department_id = 4 and e2.department_id = 1;
+
+-------------------------------------------------------------------------------
+
+Q2- Find the average number of bathrooms and bedrooms for each city’s property types. 
+Output the result along with the city name and the property type.
+
+Answer ==>
+select city, property_type, avg(bathrooms), avg(bedrooms) 
+from airbnb_search_details
+group by city , property_type
+
+---------------------------------------------------------------------------------
+
+Q3- Count the number of movies that Abigail Breslin was nominated for an oscar.
+
+Answer ==>
+select count(movie) 
+from oscar_nominees
+where nominee = 'Abigail Breslin'
+
+------------------------------------------------------------------------------------
+
